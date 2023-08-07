@@ -1,6 +1,10 @@
-const express = require('express');
+import noteController from './notes.js';
 
-const PORT = 3001;
+if (window.location.pathname === '/notes') {
+   saveNoteBtn.addEventListener('click', handleNoteSave);
+    newNoteBtn.addEventListener('click', handleNewNoteView);
+    noteTitle.addEventListener('keyup', handleRenderSaveBtn);
+    noteText.addEventListener('keyup', handleRenderSaveBtn);
+}
 
-const app = express();
-
+noteController.getAndRenderNotes();
