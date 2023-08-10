@@ -74,7 +74,14 @@ app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './public/notes.html'));
 });
 
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+})
 
+// Default route to serve the index HTML file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
 
 
 app.listen(PORT, () => {
